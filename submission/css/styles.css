@@ -139,9 +139,15 @@ img {
 #hero img {
     width: 50%;
 }
-#hero.highlight {
-    background-color: #B8E3E9;
-    transition: background-color 0.3s ease;
+.hidden {
+    display: none;
+}
+
+#bannerCaption {
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #003366;
 }
 
 .hero-text h2 {
