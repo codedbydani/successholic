@@ -27,3 +27,32 @@ achievements.forEach(function (achievement) {
     achievementList.appendChild(listItem);
 
 });
+const trainingInput = document.getElementById("trainingInput");
+const addTraining = document.getElementById("addTraining");
+const trainingList = document.getElementById("trainingList");
+
+addTraining.addEventListener("click", function () {
+
+    if (trainingInput.value.trim() === "") {
+        return;
+    }
+
+    const listItem = document.createElement("li");
+
+    listItem.textContent = trainingInput.value;
+
+    const removeButton = document.createElement("button");
+
+    removeButton.textContent = "Remove";
+
+    removeButton.addEventListener("click", function () {
+        listItem.remove();
+    });
+
+    listItem.appendChild(removeButton);
+
+    trainingList.appendChild(listItem);
+
+    trainingInput.value = "";
+
+});
