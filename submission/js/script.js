@@ -124,3 +124,11 @@ joinForm.addEventListener("submit", function (event) {
 
     formMessage.textContent = "Registration successful!";
 });
+const toggleBanner = document.getElementById("toggleBanner");
+const heroSection = document.getElementById("hero");
+
+toggleBanner.addEventListener("click", function () {
+
+    heroSection.classList.toggle("highlight");
+
+});

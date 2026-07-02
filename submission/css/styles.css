@@ -1,4 +1,4 @@
-/* Reset */
+
 html {
     scroll-behavior: smooth;
 }
@@ -138,6 +138,10 @@ img {
 
 #hero img {
     width: 50%;
+}
+#hero.highlight {
+    background-color: #B8E3E9;
+    transition: background-color 0.3s ease;
 }
 
 .hero-text h2 {
