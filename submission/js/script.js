@@ -56,3 +56,23 @@ addTraining.addEventListener("click", function () {
     trainingInput.value = "";
 
 });
+const joinForm = document.getElementById("joinForm");
+const formMessage = document.getElementById("formMessage");
+
+joinForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    if (name === "" || email === "") {
+
+        formMessage.textContent = "Please fill in all fields.";
+
+        return;
+
+    }
+
+    formMessage.textContent = "Registration successful!";
+});
