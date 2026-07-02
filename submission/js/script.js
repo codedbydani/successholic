@@ -27,35 +27,83 @@ achievements.forEach(function (achievement) {
     achievementList.appendChild(listItem);
 
 });
+
+
 const trainingInput = document.getElementById("trainingInput");
 const addTraining = document.getElementById("addTraining");
 const trainingList = document.getElementById("trainingList");
 
-addTraining.addEventListener("click", function () {
+function saveTrainingList() {
 
-    if (trainingInput.value.trim() === "") {
-        return;
-    }
+    const drills = [];
+
+    document.querySelectorAll("#trainingList li").forEach(function (item) {
+
+        drills.push(item.firstChild.textContent);
+
+    });
+
+    localStorage.setItem("trainingDrills", JSON.stringify(drills));
+
+}
+
+function createTrainingItem(drill) {
 
     const listItem = document.createElement("li");
 
-    listItem.textContent = trainingInput.value;
+    listItem.textContent = drill;
 
     const removeButton = document.createElement("button");
 
-    removeButton.textContent = "Remove";
+    removeButton.textContent = " Remove";
 
     removeButton.addEventListener("click", function () {
+
         listItem.remove();
+
+        saveTrainingList();
+
     });
 
     listItem.appendChild(removeButton);
 
     trainingList.appendChild(listItem);
 
+}
+
+function loadTrainingList() {
+
+    const drills = JSON.parse(localStorage.getItem("trainingDrills")) || [];
+
+    drills.forEach(function (drill) {
+
+        createTrainingItem(drill);
+
+    });
+
+}
+
+addTraining.addEventListener("click", function () {
+
+    const drill = trainingInput.value.trim();
+
+    if (drill === "") {
+
+        return;
+
+    }
+
+    createTrainingItem(drill);
+
+    saveTrainingList();
+
     trainingInput.value = "";
 
 });
+
+loadTrainingList();
+
+
 const joinForm = document.getElementById("joinForm");
 const formMessage = document.getElementById("formMessage");
 
