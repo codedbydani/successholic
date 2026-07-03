@@ -1,0 +1,19 @@
+Implementation Notes
+
+Feature 1:
+Dynamic achievements were generated using a JavaScript array and forEach() to populate the achievements list.
+
+Feature 2:
+A Training Wishlist was implemented using DOM manipulation. Users can add new training drills and remove them dynamically.
+
+Feature 3:
+Client-side form validation was implemented using preventDefault(). The form checks that the Name and Email fields are not empty before displaying a success message.
+
+Feature 4:
+The Training Wishlist is stored using localStorage. Added drills remain available after refreshing the page and are updated whenever drills are added or removed.
+
+Feature 5:
+Clicking the banner image toggles the visibility of a caption using classList.toggle(), matching the assignment requirement.
+
+Deployment:
+The project was deployed to Render using the personal GitHub repository.
